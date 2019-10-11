@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        nameTextField.delegate = self
     }
+    
     // Mark: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide keyboard
@@ -28,6 +30,8 @@ class ViewController: UIViewController {
         mealNameLabel.text = textField.text
     }
     // Mark: Action
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+    }
     @IBAction func setDefaultLabeltext(_ sender: UIButton) {
         mealNameLabel.text = "Default Text"
     }
