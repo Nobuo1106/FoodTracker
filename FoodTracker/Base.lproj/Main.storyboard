@@ -44,7 +44,10 @@
                                             <constraint firstAttribute="width" secondItem="ktI-Vy-R5r" secondAttribute="height" multiplier="1:1" id="UFw-JL-a8R"/>
                                         </constraints>
                                         <connections>
+                                            <outletCollection property="gestureRecognizers" destination="2nO-OI-YBR" appends="YES" id="lqq-YG-fr2"/>
                                             <outletCollection property="gestureRecognizers" destination="2nO-OI-YBR" appends="YES" id="wnE-6i-z4Q"/>
+                                            <outletCollection property="gestureRecognizers" destination="2nO-OI-YBR" appends="YES" id="m1N-tz-gOm"/>
+                                            <outletCollection property="gestureRecognizers" destination="2nO-OI-YBR" appends="YES" id="jy1-hi-D4s"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -65,6 +68,7 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="qw4-TE-seo" id="xq0-BN-gxk"/>
                         <outlet property="nameTextField" destination="HRR-5d-JG3" id="aeO-Fo-Yra"/>
+                        <outlet property="photoImageView" destination="ktI-Vy-R5r" id="5dZ-QB-om2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
