@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         nameTextField.delegate = self
     }
     
-    // Mark: UITextFieldDelegate
+    //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide keyboard
         textField.resignFirstResponder()
@@ -31,14 +31,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         mealNameLabel.text = textField.text
     }
     
-    // Mark: UIImagePickerControllerDelegate
+    //MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
          //Dismiss the picker if the user canceled.
            dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as?
+   func imagePickerController(_ picker: UIImagePickerController,
+                              didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        guard let selectedImage = info[.originalImage] as?
         UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
