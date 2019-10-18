@@ -50,8 +50,8 @@
                                             <outletCollection property="gestureRecognizers" destination="2nO-OI-YBR" appends="YES" id="jy1-hi-D4s"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIj-l1-u57" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="436.5" width="200" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UIj-l1-u57" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="436.5" width="50" height="110"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
