@@ -10,6 +10,25 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
     
+    
+    //MARK: Properties
+    private var ratingButtons = [UIButton]()
+    var rating = 0 {
+        didSet {
+            updateButtonSelectionStates()
+        }
+    }
+    @IBInspectable var starSize: CGSize = CGSize(width:44.0, height:44.0) {
+        didSet {
+            setupButtons()
+        }
+    }
+    @IBInspectable var starCount: Int = 5 {
+        didSet {
+            setupButtons()
+        }
+    }
+    
     //MARK: Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,23 +52,13 @@ import UIKit
         if selectedRating == rating {
             // if the selected star represents the current rating, reset the rating to 0.
             rating = 0
-        }
-       }
-    
-    
-    //MARK: Properties
-    private var ratingButtons = [UIButton]()
-    var rating = 0
-    @IBInspectable var starSize: CGSize = CGSize(width:44.0, height:44.0) {
-        didSet {
-            setupButtons()
+        } else {
+            //Otherwise set the rating to the selected star
+            rating = selectedRating
         }
     }
-    @IBInspectable var starCount: Int = 5 {
-        didSet {
-            setupButtons()
-        }
-    }
+    
+
     
     
     //MARK: Private Methods
@@ -100,7 +109,7 @@ import UIKit
     }
     
     private func updateButtonSelectionStates() {
-        for(index, button) in ratingButtons.enumerated() {
+        for (index, button) in ratingButtons.enumerated() {
             // If the index of a button is less than the rating, that button should be selected.
             button.isSelected = index < rating
             
@@ -127,6 +136,10 @@ import UIKit
             button.accessibilityHint = hintString
             button.accessibilityValue = valueString
         }
+    }
+    
+    private func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerated()
     }
 }
 
