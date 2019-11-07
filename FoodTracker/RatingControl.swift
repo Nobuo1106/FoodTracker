@@ -137,9 +137,5 @@ import UIKit
             button.accessibilityValue = valueString
         }
     }
-    
-    private func updateButtonSelectionStates() {
-        for (index, button) in ratingButtons.enumerated()
-    }
 }
 
